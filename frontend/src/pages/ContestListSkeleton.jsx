@@ -3,14 +3,14 @@ import React from 'react';
 const ContestListSkeleton = () => {
   return (
     <div className="container my-5">
-      {/* Title Skeleton */}
+    
       <div className="row mb-4">
         <div className="col-12">
           <h1 className="placeholder col-3" style={{height: "2rem"}}></h1>
         </div>
       </div>
 
-      {/* Cards Grid */}
+      
       <div className="row">
         {[...Array(6)].map((_, index) => (
           <div key={index} className="col-md-6 col-lg-4 mb-4">

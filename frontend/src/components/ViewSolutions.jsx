@@ -4,20 +4,19 @@ import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 
 
-// Helper function: Given a playlist URL, extract the "list" query parameter and return the embed URL.
+
 const embedPlaylist = (playlistUrl) => {
   try {
     const url = new URL(playlistUrl);
     const playlistId = url.searchParams.get("list");
     return `https://www.youtube.com/embed/videoseries?list=${playlistId}`;
   } catch (error) {
-    // If parsing fails, fallback to the original URL.
-    return playlistUrl;
+   
   }
 };
 
 const ViewSolutions = () => {
-  const { id } = useParams(); // "id" is your MongoDB document id
+  const { id } = useParams(); 
   const [solutions, setSolutions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -27,7 +26,7 @@ const ViewSolutions = () => {
       try {
         const response = await axios.get(`http://localhost:8000/api/contests/view/solutionurl/${id}`);
         const data = response.data.data;
-        // Ensure we always work with an array of solutions.
+     
         setSolutions(Array.isArray(data) ? data : [data]);
       } catch (err) {
         setError(err.response?.data?.message || err.message);

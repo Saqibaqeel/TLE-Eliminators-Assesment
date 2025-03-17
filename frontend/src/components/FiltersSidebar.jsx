@@ -17,7 +17,7 @@ const FiltersSidebar = ({ darkMode, filterPlatform, setFilterPlatform, filterSta
     { label: 'Past', value: 'past' },
   ];
 
-  // Conditionally style the sidebar based on dark mode
+  
   const sidebarClass = darkMode ? 'p-3 bg-secondary text-light' : 'p-3 bg-light';
 
   return (
@@ -31,7 +31,7 @@ const FiltersSidebar = ({ darkMode, filterPlatform, setFilterPlatform, filterSta
         {isOpen ? 'Hide Filters' : 'Show Filters'}
       </button>
       
-      {/* Sidebar content: always visible on large screens, toggleable on mobile */}
+  
       <div className={`${sidebarClass} ${isOpen ? 'd-block' : 'd-none d-lg-block'}`}>
         <h4 className="mb-4">
           <i className="fas fa-filter me-2"></i>

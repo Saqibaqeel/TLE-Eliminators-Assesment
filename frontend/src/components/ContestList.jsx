@@ -158,7 +158,7 @@ const ContestList = ({ contests, darkMode, toggleDarkMode }) => {
 
                   {contest.solutionUrl && (
                     <div className="mt-2">
-                      {/* View Solutions Link to render solution component */}
+                     
                       <Link
   to={`/solution/${contest._id}`}
   className="text-decoration-none small"
